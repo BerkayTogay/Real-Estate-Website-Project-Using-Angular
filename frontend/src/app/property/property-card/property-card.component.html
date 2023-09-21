@@ -1,0 +1,46 @@
+<div class="card cardBody">
+  <div class="card-header mx-auto p-3" style="object-fit: cover;">
+    <img class="cardImage card-img-top img-fluid w-100" src="assets/images/{{properties.image}}.jpg"
+      *ngIf="properties.image">
+    <img class="cardImage card-img-top img-fluid w-100" src="assets/images/houseImage1.jpg" *ngIf="!properties.image">
+    <ul *ngIf="!hideIcons" class="list-inline text-center member-icons">
+      <li class="list-inline-item">
+        <button class="btn btn-primary btn-sm" [routerLink]="['/property-detail/',properties.id]"
+          routerLinkActive="active">
+          <i class="fa-sharp fa-solid fa-address-book"></i></button>
+      </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary btn-sm"><i class="fa-solid fa-address-book"></i></button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-2">
+    <!--
+    <h3>{{properties.id}}</h3>
+     -->
+    <h4>
+      <small class="text-primary"><i>Owner : </i></small>
+      <span>{{properties.name}}</span>
+      |
+      <span><small><i><b class="text-success">{{properties.city}}</b></i></small></span>
+    </h4>
+    <h5>
+      <small class="text-primary"><i>Number Of Rooms :</i></small>
+      <span>{{properties.numberOfRooms}}</span>
+      |
+      <small class="text"><i>Type : </i></small>
+      <span>{{properties.type}}</span>
+    </h5>
+    <h4 *ngIf="properties.situation!=null">
+      <hr>
+      <small><i class="text-primary">Property Situation : </i>
+        <span><b>{{properties.situation}}</b></span>
+      </small>
+    </h4>
+    <div class="text-center">
+      <hr>
+      <h3><b>{{properties.price}}₺</b></h3>
+    </div>
+
+  </div>
+</div>

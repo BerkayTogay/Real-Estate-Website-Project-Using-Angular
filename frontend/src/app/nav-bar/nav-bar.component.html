@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-1" [routerLink]="['/home']" routerLinkActive="router-link-active">Get Your House</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- 
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/list-property']" routerLinkActive="active">List</a>
+        </li>
+        -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/buy-property']" routerLinkActive="active">Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/rent-property']" routerLinkActive="active">Rent</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedIn()">
+          <a class="nav-link" [routerLink]="['/add-property']" routerLinkActive="active">Add Property</a>
+        </li>
+      </ul>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="nav-item" *ngIf="!loggedIn()">
+            <a class="nav-link" [routerLink]="['/user/register']" routerLinkActive="active">Register</a>
+          </li>
+          <li class="nav-item" *ngIf="!loggedIn()">
+            <a class="nav-link" [routerLink]="['/user/login']" routerLinkActive="active">Login</a>
+          </li>
+          <!--
+          <li class="nav-item" *ngIf="loggedIn()">
+            <a class="nav-link" (click)="onLogout()">Logout</a>
+          </li>
+           -->
+           <div class="btn-group" dropdown *ngIf="loggedIn()">
+            <button id="button-disabled-item" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                    aria-controls="dropdown-disabled-item">
+              Welcome <span class="caret">{{loggedInUser}}</span>
+            </button>
+            <ul id="dropdown-disabled-item" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-disabled-item">
+              <li class="disabled" role="menuitem"><a class="dropdown-item disabled">Change Password</a></li>
+              <li role="menuitem"><a class="dropdown-item" (click)="onLogout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

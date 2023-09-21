@@ -1,0 +1,15 @@
+.card
+{
+    min-height: 500px;
+}
+
+.card-img-top
+{
+    height: 220px;
+}
+
+.ngx-gallery 
+{
+    display: inline-block; 
+    margin-bottom: 20px;   
+}

@@ -1,0 +1,12 @@
+<!-- 
+{{today| date:'fullDate'}}
+-->
+<label class="mt-2 ms-1"><b>Filter City : </b><input [(ngModel)]="city">
+</label>
+
+<div class="row justify-content-center">
+    <div *ngFor="let property of properties|filter:city:'city'|sort:['price','desc']" class="shadow col-lg-3 col-6 p-3 mt-4 mx-1">
+      <app-property-card [properties]="property"></app-property-card>
+    </div>
+</div>
+<router-outlet></router-outlet>

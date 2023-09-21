@@ -1,0 +1,61 @@
+.card{
+  min-height: 400px !important;
+  overflow: hidden;
+}
+
+.card-header
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cardImage{
+  width: 100% !important;
+  min-width: 250px; /* İstediğiniz genişliği belirtin */
+  height: 150px; /* İstediğiniz yüksekliği belirtin */
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover img{
+  transform: scale(1.2, 1.2);
+  opacity: 0.85;
+  transition: ease-in-out 0.3s;
+}
+
+.card:hover .member-icons
+{
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.card-header{
+  overflow: hidden;
+}
+
+.member-icons
+{
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  top: 38%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media screen and (max-width:480px) {
+  .cardImage{
+    width: 100% !important;
+    max-width: 100px !important;
+    position: relative;
+    object-fit: cover;
+  }
+}

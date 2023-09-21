@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row shadow mt-2">
+    <div class="col-sm-4 col-12 p-4">
+      <div class="card">
+        <div class="card-header">
+          <img *ngIf="property.image" src="../../../assets/images/{{property.image}}.jpg" class="card-img-top">
+          <img *ngIf="!property.image" src="../../../assets/images/apartmanResmi3.jpg" class="card-img-top">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">
+            <small><i class="text-primary">Property Owner : </i></small>{{property.name}}
+          </h3>
+          <h5>
+            <small><i class="text-primary">Rooms : </i></small>{{property.numberOfRooms}}
+            |
+            <small><i class="text-secondary">Type : </i></small>{{property.type}}
+          </h5>
+          <hr>
+          <h5>
+            <small><i class="text-primary">City : </i></small><b>{{property.address}}</b>
+            |
+            <small>
+              <i class="text-primary">Situation : 
+                <span *ngIf="property.sellRent=='1'" class="text-secondary"><b><u>sale</u></b></span>
+                <span *ngIf="property.sellRent=='2'" class="text-secondary"><b><u>rent</u></b></span>
+              </i>
+            </small>
+          </h5>
+          <hr>
+          <h4 class="float-end mt-2">
+            <b>
+              <u>{{property.price}}₺</u>
+            </b>
+          </h4>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+          <div class="btn-group">
+            <button class="btn btn-primary">Like</button>
+            <button class="btn btn-success">Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 col-12 p-4">
+      <tabset class="member-tabset" #formTab>
+        <tab heading="Overview">
+          <div class="row mt-3 p-3">
+            <div class="container">
+              <h4><b class="text-success">Property Owner : </b> {{property.name}}</h4>
+              <hr>
+              <h6>
+                <b>Property Floor : </b>
+                <span>{{property.floor}}</span>
+                |
+                <b>Property Age : </b>
+                <span>{{property.ageOfProperty}}</span>
+              </h6>
+              <h5 class="mt-4"><b class="text-success">Description : </b>
+                <p class="mt-1 bg-dark text-white p-3" style="border-radius: 10px;"><i> Lorem ipsum dolor sit amet consectetur adipisicing elit. In minus suscipit numquam ex minima eligendi earum quisquam commodi eveniet sequi rerum ratione enim, nulla pariatur iste. Repellat maiores debitis deserunt.
+                Quia magnam dolorem fugiat. Magnam perferendis commodi repellat adipisci eaque? Explicabo cumque hic nihil et modi, minus quod numquam iure ipsa, ex qui autem necessitatibus eveniet blanditiis cum quisquam animi.
+                Maiores magnam nemo repellendus veniam dolores earum esse veritatis, aspernatur delectus velit neque tenetur doloremque aut vero distinctio, vel iusto nulla minus sapiente a praesentium nesciunt iste expedita dolorum? Tempore!</i></p>
+              </h5>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Address">
+          <div class="row mt-3 p-3">
+            <div class="container">
+              <h4><b class="text-success">City : </b>{{property.city}} <span>|</span></h4>
+              <hr>
+              <h4><b class="text-success">District : </b>{{property.district}} |
+                  <b class="text-success ms-2">Neighbourhood : </b>{{property.neighbourhood}}</h4>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Photos">
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery img-fluid"
+          style="object-fit: cover;"></ngx-gallery>
+        </tab>
+        <tab heading="Contact">
+          <div class="row">
+            <div class="container mt-3">
+              <p><b>For More Information, Contact With Us</b></p>
+              <p><i><b class="text-success">+539333 3333 (TR)</b></i></p>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+
+    </div>
+  </div>
+</div>

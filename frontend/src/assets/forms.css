@@ -1,0 +1,12 @@
+.ng-invalid.ng-touched
+{
+  border-color: tomato;
+}
+
+.btn-group > label[ng-reflect-btn-radio]
+{
+  border-radius: 45px;
+  padding: 0 15px;
+}
+
+

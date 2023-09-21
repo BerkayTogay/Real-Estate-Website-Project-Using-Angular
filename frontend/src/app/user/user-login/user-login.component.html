@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 m-auto border border-2 shadow-lg p-2">
+      <div class="card-header">
+        <h4 class="card-title text-center">Login</h4>
+        <hr>
+      </div>
+      <div class="card-body">
+        <form #loginForm='ngForm' (ngSubmit)="onLogin(loginForm)">
+          <div class="form-group col-12">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" #propEmail="ngModel" ngModel name="email" required>
+            <span class="text-danger" *ngIf="!propEmail.valid && propEmail.touched">
+              <span *ngIf="propEmail.errors['required']">Please provide email</span>
+            </span>
+          </div>
+          <div class="form-group col-12">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" #propPassword="ngModel" ngModel name="password" required>
+            <span class="text-danger" *ngIf="!propPassword.valid && propPassword.touched">
+              <span *ngIf="propPassword.errors['required']">Please provide password</span>
+            </span>
+          </div>
+          <div class="form-group col-12 mt-4">
+            <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+            <button class="btn btn-danger ms-2" type="reset">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
